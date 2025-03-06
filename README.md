@@ -28,7 +28,8 @@ The project has been created with [Kicad](https://www.kicad.org/), you can brows
 
 ## Software
 
-The software is not uploaded at the time of writing.
+The software supports includes a script to perform a very simple demonstration on Raspberry Pi 3 device.
+Demonstration software on MCU will be available soon.
 
 
 ## License
