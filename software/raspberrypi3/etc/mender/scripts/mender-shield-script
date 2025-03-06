@@ -1,0 +1,63 @@
+#!/bin/sh
+# @file      mender-shield-script
+# @brief     Handle mender states to refresh mender-shield display
+#
+# Copyright joelguittet and mender-mcu-client contributors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Connection status
+# Display red background if connection fails, blue background if connection is operational
+mender_shield_conn() {
+	# Lookup for the ServerURL configured in the mender.conf file
+	nslookup $(cat /etc/mender/mender.conf | jq '.Servers[0].ServerURL' | cut -d '"' -f2 | cut -d '/' -f3) > /dev/null
+	if [ $? -eq 0 ]; then
+		# Connected
+		i2ctransfer -y 1 w15@0x69 0x02 0x80 0xFF 0x00 0x00 0x00 0x00 0xFF 0xFF 0xF0 0xFF 0xF0 0xFF 0xF0 0x00
+	else
+		# Not connected
+		i2ctransfer -y 1 w15@0x69 0x02 0x80 0xFF 0x00 0x00 0x00 0x00 0xFF 0x88 0x80 0x88 0x80 0x88 0x80 0x00
+	fi
+}
+
+# Idle state
+# Display mender logo
+mender_shield_idle() {
+	i2ctransfer -y 1 w15@0x68 0x02 0x41 0x5D 0x0F 0x43 0x01 0x59 0x69 0x88 0xF0 0xF8 0xF0 0x88 0xF0 0x00
+}
+
+# Sync state
+# Increase brightness of the mender logo
+mender_shield_sync() {
+	i2ctransfer -y 1 w15@0x68 0x02 0x81 0x5D 0x0F 0x43 0x01 0x59 0x69 0x88 0xF0 0xF8 0xF0 0x88 0xF0 0x00
+}
+
+# Update connection status
+mender_shield_conn
+
+# Treatment depending of the mender state
+state=$(echo "$(basename $0)" | cut -d '_' -f1-2)
+echo "mender-shield-script ($state)" >&2
+case $state in
+	"Idle_Enter")
+	mender_shield_idle
+	;;
+	"Sync_Enter")
+	mender_shield_sync
+	;;
+	*)
+	echo "Not supported: $state" >&2
+	;;
+esac
+
+exit 0
