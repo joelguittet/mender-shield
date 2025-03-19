@@ -28,8 +28,7 @@ The project has been created with [Kicad](https://www.kicad.org/), you can brows
 
 ## Software
 
-The software supports includes a script to perform a very simple demonstration on Raspberry Pi 3 device.
-Demonstration software on MCU will be available soon.
+The software supports includes a script to perform a very simple demonstration on Raspberry Pi 3 device and an ESP-IDF based application used with the [Wemos D1 r32](.github/docs/Wemos-D1-R32.pdf) ESP32-based evaluation board.
 
 
 ## License

@@ -1,0 +1,6 @@
+[submodule "software/esp-idf/components/msgpack-c/msgpack-c"]
+	path = software/esp-idf/components/msgpack-c/msgpack-c
+	url = https://github.com/msgpack/msgpack-c.git
+[submodule "software/esp-idf/components/mender-mcu-client/mender-mcu-client"]
+	path = software/esp-idf/components/mender-mcu-client/mender-mcu-client
+	url = https://github.com/joelguittet/mender-mcu-client.git
