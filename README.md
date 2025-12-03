@@ -1,7 +1,18 @@
 # mender-shield
 
-[![Issues Badge](https://img.shields.io/github/issues/joelguittet/mender-esp32-example)](https://github.com/joelguittet/mender-esp32-example/issues)
-[![License Badge](https://img.shields.io/github/license/joelguittet/mender-esp32-example)](https://github.com/joelguittet/mender-esp32-example/blob/master/LICENSE)
+[![Workflow check-code-format Badge](https://github.com/joelguittet/mender-shield/workflows/check-code-format/badge.svg)](https://github.com/joelguittet/mender-shield/actions)
+[![Issues Badge](https://img.shields.io/github/issues/joelguittet/mender-shield)](https://github.com/joelguittet/mender-shield/issues)
+[![License Badge](https://img.shields.io/github/license/joelguittet/mender-shield)](https://github.com/joelguittet/mender-shield/blob/master/LICENSE)
+
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=joelguittet_mender-shield&metric=bugs)](https://sonarcloud.io/dashboard?id=joelguittet_mender-shield)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=joelguittet_mender-shield&metric=code_smells)](https://sonarcloud.io/dashboard?id=joelguittet_mender-shield)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=joelguittet_mender-shield&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=joelguittet_mender-shield)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=joelguittet_mender-shield&metric=ncloc)](https://sonarcloud.io/dashboard?id=joelguittet_mender-shield)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=joelguittet_mender-shield&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=joelguittet_mender-shield)
+
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=joelguittet_mender-shield&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=joelguittet_mender-shield)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=joelguittet_mender-shield&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=joelguittet_mender-shield)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=joelguittet_mender-shield&metric=security_rating)](https://sonarcloud.io/dashboard?id=joelguittet_mender-shield)
 
 The Mender Shield illustrates the capability to run a Mender client on heterogeneous platforms such as RaspberryPi (Linux based) and MCUs (RTOS/bare metal).
 
